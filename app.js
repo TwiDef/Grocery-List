@@ -10,6 +10,7 @@ submitBtn.addEventListener('click', () => {
         items.insertAdjacentHTML('afterbegin', `<h2 class="item">- ${item}</h2>`);
     }
     input.value = '';
+    input.focus();
 });
 
 items.addEventListener('click', (e) => {
