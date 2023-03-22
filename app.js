@@ -1,6 +1,7 @@
 const items = document.querySelector('.items');
 const submitBtn = document.querySelector('.submit');
 const input = document.querySelector('input');
+const removeBtn = document.querySelector('.removeBtn');
 
 submitBtn.addEventListener('click', () => {
     const item = input.value;
@@ -13,12 +14,10 @@ submitBtn.addEventListener('click', () => {
 
 items.addEventListener('click', (e) => {
     if (e.target.classList.contains("item")) {
-        e.target.classList.add('item-crossout');
+        e.target.classList.toggle('item-crossout');
     }
 });
 
-items.addEventListener('dblclick', (e) => {
-    if (e.target.classList.contains("item")) {
-        e.target.remove();
-    }
+removeBtn.addEventListener('click', () => {
+    document.querySelectorAll('.item').forEach(item => item.remove());
 });
